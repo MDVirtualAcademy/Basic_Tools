@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Desenhando no Canvas</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <script>
+            var ctx;
+            function init()
+            {
+                //desenha retangulo
+                ctx = document.getElementById('canret').getContext('2d');
+                ctx.lineWidth = 8;
+                ctx.strokeStyle = "rgb(200,50,80)";
+                ctx.fillStyle = "rgb(40,80,70)";
+                ctx.fillRect(50,50,100,200);
+                ctx.strokeRect(50,50,100,200);               
+            }
+        </script>
+    </head>
+    <body onLoad="init();">
+        <h2>Desenho - Retangulo</h2>
+        <canvas id="canret" width="500" height="500">
+        </canvas>
+    </body>
+</html>

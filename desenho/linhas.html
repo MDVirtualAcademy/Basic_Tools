@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Desenhando no Canvas</title>
+        <script>
+            var ctx;
+            function init()
+            {
+                //desenha Linhas
+                
+                ctx = document.getElementById('canret').getContext('2d');
+                ctx.fillStyle = "rgb(255,0,0)";
+                ctx.fillRect(150,150,5,5);
+                ctx.lineWidth=2;
+                ctx.beginPath();
+                ctx.moveTo(150,150);
+                ctx.lineTo(50,200);
+                ctx.moveTo(50,200);
+                ctx.lineTo(200,300);
+                ctx.moveTo(200,300);
+                ctx.lineTo(350,200);
+                ctx.closePath();
+                
+                ctx.stroke();
+            }
+        </script>
+    </head>
+    <body onLoad="init();">
+        <canvas id="canret" width="500" height="500">
+        </canvas>            
+    </body>
+</html>

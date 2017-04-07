@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Intervalo e validações</title>
+        <style>
+            input:valid
+            {
+                background-color: green;
+            }
+            
+            input:invalid
+            {
+                background-color: red;
+            }
+        </style>
+        <script>
+            var rel;
+            var posX;
+            var posY;
+            function init()
+            {
+                rel = setInterval(increase,1000);
+                //clearInterval(rel);
+            }
+            
+            function increase()
+            {
+                document.f.secs.value = String(1+Number(document.f.secs.value));
+            }
+            
+            function change()
+            {
+                posX = Number(f.hv.value);
+                posY = Number(f.vv.value);
+            }
+        </script>
+    </head>
+    <body onLoad="init();">
+        <form name="f" onSubmit="return change();">
+            <input type="text" name="secs" value="0"/>
+            <br>
+            <input name="hv" id="hv" value="4" type=number min="-10" max='10' />
+            <input name="vv" id="vv" value="8" type=number min="-10" max='10' />
+            <br>
+            <input type="submit" value="CHANGE" />
+        </form>
+    </body>
+</html>

@@ -1,0 +1,143 @@
+* {
+    margin: 0 auto;
+    font-family: sans-serif;
+    font-weight: 400;
+    line-height: 26px;
+}
+
+header {
+    height: 120px;
+    width: 100%;
+    background-color: #7bac3f;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    font-size: 1em;
+    z-index: 1;
+    transition: all .3s;
+}
+
+.header_fixed {
+    font-size: 0.7em;
+    height: 60px;
+}
+
+header h1 {
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0px 40px;
+    text-align: center;
+}
+
+nav {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 2;
+}
+
+nav .menu {
+    background-color: #7bac3f;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    line-height: 60px;
+    text-align: center;
+}
+
+.nav-itens {
+    position: absolute;
+    top: -210px;
+    right: 6px;
+    opacity: 0;
+    transition: all .3s;
+}
+
+.nav-itens a {
+    display: block;
+    margin: 10px 0;
+    color: #fff;
+    background-color: #7bac3f;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.nav-show {
+    opacity: 1;
+}
+
+main {
+    padding-top: 120px;
+}
+
+.text_tooltip {
+    background-color: rgb(90,88,88);
+    width: 200px;
+    text-decoration: none;
+    padding: 0px 5px;
+    position: absolute;
+    right: 60px;
+    height: 25px;
+    opacity: 0;
+    transition: all .2s;
+}
+
+.text_tooltip:after {
+    content: "";
+    border-top: 0px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid rgb(90,88,88);
+    position: absolute;
+    right: -10px;
+    top: 0px;
+}
+
+.section_info {
+    padding: 60px 60px;
+}
+
+h2.header {
+    font-size: 1.8em;
+    color: #494949;
+    text-transform: uppercase;
+    margin: 20px 0;
+}
+
+.parallax-container {
+	position: relative;
+	overflow: hidden;
+    height: 200px;
+}
+
+.parallax {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.parallax img {
+    display: none;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translateX(-50%);
+}
+
+footer {
+    background-color: #494949;
+    padding: 20px 0;
+    text-align: center;
+    color: #fff;
+}

@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Desenhando no Canvas</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <script>
+            var ctx;
+			var img = new Image();
+            img.src="img/Brasil_ban.png";
+            function init()
+            {
+				//manipulando imagem
+				ctx = document.getElementById('canret').getContext('2d');
+                ctx.drawImage(img,100,300,100,100);	           
+            }
+        </script>
+    </head>
+    <body onLoad="init();">
+        <h2>Desenho - Circulos e Arcos</h2>
+        <canvas id="canret" width="500" height="500">
+        </canvas>
+    </body>
+</html>

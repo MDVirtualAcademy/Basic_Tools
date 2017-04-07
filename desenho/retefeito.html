@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>Desenhando no Canvas</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <script>
+            var ctx;
+            function init()
+            {
+                //desenha retangulo
+                ctx = document.getElementById('canret').getContext('2d');
+                ctx.lineWidth = 8;
+                ctx.strokeStyle = "rgb(200,50,80)";
+                ctx.fillStyle = "rgb(40,80,70)";
+                ctx.fillRect(50,50,100,200);
+                ctx.strokeRect(50,50,100,200);  
+				//preenchimento em gradiente
+                var grad;
+                grad = ctx.createLinearGradient(200,50,300,250);
+                grad.addColorStop(0,"rgb(255,255,255)");
+                grad.addColorStop(1,"rgb(0,0,255)");
+                ctx.fillStyle = grad;
+                ctx.fillRect(200,50,100,200);
+                //Gradiente com multiplas cores
+                var hue = [
+                    [255,0,0], //vermelho
+                    [255,255,0], //amarelo
+                    [0,255,0], //verde
+                    [0,255,255], //ciano
+                    [0,0,255], //azul
+                    [255,0,255] //magenta
+                    
+                ];
+                var color;
+                var gradc;
+                var h;
+                gradc = ctx.createLinearGradient(350,50,450,250);
+                for (h=0; h < hue.length; h++)
+                {
+                    color ='rgb('+hue[h][0]+','+hue[h][1]+','+hue[h][2]+')';
+                    gradc.addColorStop(h*1/6,color);
+                }
+                ctx.fillStyle = gradc;
+                ctx.fillRect(350,50,100,200);
+            }
+        </script>
+    </head>
+    <body onLoad="init();">
+        <h2>Desenho - Retangulo - prenchimento gradiente</h2>
+        <canvas id="canret" width="500" height="500">
+        </canvas>
+    </body>
+</html>
